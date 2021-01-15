@@ -130,7 +130,7 @@ public class Inquire implements Constants{
 
 
     public Map<Integer,String> getValueDescriptionList(String command, String field) {
-        Map<Integer,String> notfound=new HashMap<>();
+        Map<Integer,String> notfound=new HashMap<Integer,String>();
         FieldGroup dataGroup=protocalTemplate.getDataMapByName().get(command);
         if(dataGroup==null){
             return notfound;
@@ -146,12 +146,12 @@ public class Inquire implements Constants{
 
 
     public List<String> getDataList() {
-        return new ArrayList<>(protocalTemplate.getDataMapByName().keySet());
+        return new ArrayList<String>(protocalTemplate.getDataMapByName().keySet());
     }
 
 
     public List<String> getEventList() {
-        return new ArrayList<>(protocalTemplate.getEventMapByName().keySet());
+        return new ArrayList<String>(protocalTemplate.getEventMapByName().keySet());
     }
 
     public String getDataTemplate(String dataName) {
@@ -165,7 +165,7 @@ public class Inquire implements Constants{
     }
 
     private Map getTemplate(FieldGroup dataGroup){
-        Map<String,Object> dataContent=new LinkedHashMap<>();
+        Map<String,Object> dataContent=new LinkedHashMap<String,Object>();
         Iterator dataIt=dataGroup.getChildNodes().entrySet().iterator();
         while (dataIt.hasNext()){
             Map.Entry entry=(Map.Entry)dataIt.next();
@@ -188,7 +188,7 @@ public class Inquire implements Constants{
                     continue;
                 }
                 if(LIST.equals(fieldGroup.getType())){
-                    List<Object> listContent=new ArrayList<>();
+                    List<Object> listContent=new ArrayList<Object>();
                     if(fieldGroup.getFormater()!=null){
                         listContent.add(fieldGroup.getFormater());
                     }else{

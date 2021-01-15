@@ -13,7 +13,7 @@ import java.util.List;
  * Created by PETER on 2015/3/24.
  */
 public class WrapperChain {
-    List<Wrapper> wrappers=new ArrayList<>();
+    List<Wrapper> wrappers=new ArrayList<Wrapper>();
 
     public void add(Wrapper wrapper){
         if(wrappers.size()>0){

@@ -8,7 +8,7 @@ import java.util.Map;
  * Created by PETER on 2015/3/25.
  */
 public class PacketSegmentContext {
-    private Map<SegmentEnum,Segment> packetSegmentMap=new LinkedHashMap<>();
+    private Map<SegmentEnum,Segment> packetSegmentMap=new LinkedHashMap<SegmentEnum,Segment>();
     public PacketSegmentContext(){
         packetSegmentMap.put(SegmentEnum.head,new Head());
         packetSegmentMap.put(SegmentEnum.control,new Control());

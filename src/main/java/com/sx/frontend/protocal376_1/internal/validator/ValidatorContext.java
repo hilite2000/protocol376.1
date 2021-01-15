@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by PETER on 2015/3/24.
  */
 public class ValidatorContext {
-    private Map<String,IValidator> validatorMap=new ConcurrentHashMap<>();
+    private Map<String,IValidator> validatorMap=new ConcurrentHashMap<String,IValidator>();
     public ValidatorContext(){
         validatorMap.put("exclude",new Exclude());
         validatorMap.put("include",new Include());

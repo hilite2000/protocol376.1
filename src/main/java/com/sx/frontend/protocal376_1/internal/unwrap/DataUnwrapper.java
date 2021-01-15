@@ -33,7 +33,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
 
     private FieldTypeContext fieldTypeContext=new FieldTypeContext();
     private IFormatter formatter=new FormatterImpl();
-    private Map<String,DecodeFieldGroup> decodeFieldGroupMap=new HashMap<>();
+    private Map<String,DecodeFieldGroup> decodeFieldGroupMap=new HashMap<String,DecodeFieldGroup>();
     private static final int AFN_EVENT=14;
 
     public DataUnwrapper(){
@@ -42,7 +42,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
 
     private void init(){
         decodeFieldGroupMap.put(LIST, new DecodeFieldGroup() {
-            @Override
+//            @Override
             public void execute(FieldGroup fieldGroup, Map<String, Object> dataContent,
                                 ByteBuffer byteBuffer, ProtocalTemplate protocalTemplate) throws Exception {
                 ExpressionParser parser = new SpelExpressionParser();
@@ -56,7 +56,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
                     e.printStackTrace();
                     throw new DecodingException(1111, "list数量解析失败:" + fieldGroup.getRefNum());
                 }
-                List<Object> listContent = new ArrayList<>();
+                List<Object> listContent = new ArrayList<Object>();
                 for (int i = 0; i < numRef; i++) {
                     Map<String, Object> many = decodeData(fieldGroup, byteBuffer, protocalTemplate);
                     //format转换
@@ -72,7 +72,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
         });
 
         decodeFieldGroupMap.put(FIELDGROUP, new DecodeFieldGroup() {
-            @Override
+//            @Override
             public void execute(FieldGroup fieldGroup,Map<String,Object> dataContent,
                                 ByteBuffer byteBuffer,ProtocalTemplate protocalTemplate) throws Exception {
                 Map fieldGroupContent=decodeData(fieldGroup,byteBuffer,protocalTemplate);
@@ -87,7 +87,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
         });
 
         decodeFieldGroupMap.put(REFFIELDGROUP, new DecodeFieldGroup() {
-            @Override
+//            @Override
             public void execute(FieldGroup fieldGroup, Map<String, Object> dataContent,
                                 ByteBuffer byteBuffer, ProtocalTemplate protocalTemplate) throws Exception {
                 String groupType = fieldGroup.getRefType();
@@ -109,7 +109,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
                        ProtocalTemplate protocalTemplate, CodecConfig codecConfig) throws Exception{
         Data dataSeg=(Data)packetSegmentContext.getSegment(SegmentEnum.data);
         Control control=(Control)packetSegmentContext.getSegment(SegmentEnum.control);
-        Map<String,Object> dataContentMap=new HashMap<>();
+        Map<String,Object> dataContentMap=new HashMap<String,Object>();
         String command=decodeDataSeg(in,protocalTemplate,dataSeg,control);
         //固定剩余数据长度
         int tailLeft=4;
@@ -165,7 +165,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
                     dataContentMap = decodeData(dataGroup, in, protocalTemplate);
                 }
             }else{
-                dataContentMap=new HashMap<>();
+                dataContentMap=new HashMap<String,Object>();
             }
             dataSeg.setData(dataContentMap);
         }
@@ -174,7 +174,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
     }
 
     private Map decodeData(FieldGroup dataGroup,final ByteBuffer byteBuffer,ProtocalTemplate protocalTemplate) throws Exception{
-        Map<String,Object> dataContent=new LinkedHashMap<>();
+        Map<String,Object> dataContent=new LinkedHashMap<String,Object>();
         Iterator dataIt=dataGroup.getChildNodes().entrySet().iterator();
         while (dataIt.hasNext()){
             Map.Entry entry=(Map.Entry)dataIt.next();
@@ -217,7 +217,7 @@ public class DataUnwrapper extends Unwrapper implements Constants{
 
     private Map decodeEvent(FieldGroup dataGroup,ByteBuffer byteBuffer,
                             ProtocalTemplate protocalTemplate) throws Exception{
-        Map<String,Object> event=new HashMap<>();
+        Map<String,Object> event=new HashMap<String,Object>();
         //ec1
         byteBuffer.get();
         //ec2

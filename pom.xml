@@ -2,22 +2,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.sx</groupId>
-		<artifactId>frontend</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-
 	<groupId>com.sanxing</groupId>
 	<artifactId>protocal376.1V2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>protocal376.1</name>
 	<description>376.1通讯规约</description>
+
 	<dependencies>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.3</version>
+			<version>1.15</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -32,17 +27,17 @@
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
-			<version>3.2.1</version>
+			<version>3.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.1</version>
+			<version>3.8.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>18.0</version>
+			<version>28.2-jre</version>
 		</dependency>
 		<dependency>
 			<groupId>org.squirrelframework</groupId>
@@ -53,6 +48,11 @@
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>
 			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>5.2.10.RELEASE</version>
 		</dependency>
 
 	</dependencies>

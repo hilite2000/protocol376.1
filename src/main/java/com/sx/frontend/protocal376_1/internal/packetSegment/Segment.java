@@ -7,7 +7,7 @@ import java.util.List;
  * Created by PETER on 2015/3/25.
  */
 public abstract class Segment {
-    private List<byte[]> buffer=new ArrayList<>();
+    private List<byte[]> buffer=new ArrayList<byte[]>();
 
     public List<byte[]> getBuffer() {
         return buffer;

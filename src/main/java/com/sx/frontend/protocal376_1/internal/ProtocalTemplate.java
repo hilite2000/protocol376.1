@@ -25,24 +25,24 @@ public class ProtocalTemplate implements Constants {
     /**
      * 附件区中的字段组
      */
-    private Map<String,FieldGroup> fieldGroupMap=new ConcurrentHashMap<>();
+    private Map<String,FieldGroup> fieldGroupMap=new ConcurrentHashMap<String,FieldGroup>();
     /**
      * 按afn，pn索引数据域
      */
-    private Map<String,FieldGroup> dataMap=new ConcurrentHashMap<>();
+    private Map<String,FieldGroup> dataMap=new ConcurrentHashMap<String,FieldGroup>();
     /**
      * 按数据域名称索引数据域
      */
-    private Map<String,FieldGroup> dataMapByName=new ConcurrentHashMap<>();
+    private Map<String,FieldGroup> dataMapByName=new ConcurrentHashMap<String,FieldGroup>();
     /**
      * 事件按事件号索引
      */
-    private Map<String,IFieldNode> eventMap=new ConcurrentHashMap<>();
+    private Map<String,IFieldNode> eventMap=new ConcurrentHashMap<String,IFieldNode>();
 
     /**
      * 事件按名称索引
      */
-    private Map<String,IFieldNode> eventMapByName=new ConcurrentHashMap<>();
+    private Map<String,IFieldNode> eventMapByName=new ConcurrentHashMap<String,IFieldNode>();
 
     /**
      * 默认配置

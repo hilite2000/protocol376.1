@@ -27,7 +27,7 @@ public class Packet {
     private Map<String,Object> data;
 
     public Packet(){
-        data=new HashMap<>();
+        data=new HashMap<String,Object>();
     }
 
     public Packet(String command, HashMap<String, Object> data) {

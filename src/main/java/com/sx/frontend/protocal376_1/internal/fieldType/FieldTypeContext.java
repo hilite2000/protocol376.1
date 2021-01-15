@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 public class FieldTypeContext {
-    private Map<String,IFieldType> fieldTypeMap=new ConcurrentHashMap<>();
+    private Map<String,IFieldType> fieldTypeMap=new ConcurrentHashMap<String,IFieldType>();
     public FieldTypeContext(){
         fieldTypeMap.put("bcdSigned",new BcdSigned());
         fieldTypeMap.put("bcdUnsigned",new BcdUnsigned());

@@ -11,7 +11,7 @@ public class FormatterImpl implements IFormatter {
     private static Pattern ptn=Pattern.compile("\\$\\{[0-9a-zA-Z]+\\}");
     StringBuilder patterBuilder=new StringBuilder();
     StringBuilder valueBuilder=new StringBuilder();
-    @Override
+//    @Override
     public String union(String pattern, Map<String, Object> value) {
         String out=pattern;
         for(String s:value.keySet()){
@@ -21,14 +21,14 @@ public class FormatterImpl implements IFormatter {
     }
 
     //${ip1Seg1}.${ip1Seg2}.${ip1Seg3}.${ip1Seg4}:${ip1port}
-    @Override
+//    @Override
     public Map<String, Object> division(String pattern, String value) {
         String[] splits=ptn.split(pattern);
         patterBuilder.delete(0, patterBuilder.length());
         patterBuilder.append(pattern.replace(splits[0],""));
         valueBuilder.delete(0, valueBuilder.length());
         valueBuilder.append(value.replace(splits[0],""));
-        Map<String,Object> map=new HashMap<>();
+        Map<String,Object> map=new HashMap<String,Object>();
         for(int i=0;i<splits.length-1;i++){
             map.put(patterBuilder.substring(2,patterBuilder.indexOf(splits[i+1])-1),
                     valueBuilder.substring(0,valueBuilder.indexOf(splits[i+1])));

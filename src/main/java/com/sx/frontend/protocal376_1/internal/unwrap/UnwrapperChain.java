@@ -13,7 +13,7 @@ import java.util.List;
  * Created by PETER on 2015/3/25.
  */
 public class UnwrapperChain{
-    private List<Unwrapper> unwrappers=new ArrayList<>();
+    private List<Unwrapper> unwrappers=new ArrayList<Unwrapper>();
 
     public void add(Unwrapper unwrapper){
         if(unwrappers.size()>0){

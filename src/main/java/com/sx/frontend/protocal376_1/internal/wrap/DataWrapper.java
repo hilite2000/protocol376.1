@@ -40,7 +40,7 @@ public class DataWrapper extends Wrapper implements Constants{
     private FieldTypeContext fieldTypeContext=new FieldTypeContext();
     private ValidatorContext validatorContext=new ValidatorContext();
     private IFormatter formatter=new FormatterImpl();
-    private Map<String,EncodeFieldGroup> encodeFieldGroupMap=new HashMap<>();
+    private Map<String,EncodeFieldGroup> encodeFieldGroupMap=new HashMap<String,EncodeFieldGroup>();
 
     public DataWrapper(){
         init();
@@ -56,7 +56,7 @@ public class DataWrapper extends Wrapper implements Constants{
              * @param protocalTemplate
              * @throws Exception
              */
-            @Override
+//            @Override
             public void execute(FieldGroup fieldGroup,Map<String,Object> dataContentMap,
                                 List<byte[]> buffer,ProtocalTemplate protocalTemplate) throws Exception{
                 ExpressionParser parser = new SpelExpressionParser();
@@ -95,7 +95,7 @@ public class DataWrapper extends Wrapper implements Constants{
              * @param protocalTemplate
              * @throws Exception
              */
-            @Override
+//            @Override
             public void execute(FieldGroup fieldGroup, Map<String, Object> dataContentMap, List<byte[]> buffer, ProtocalTemplate protocalTemplate) throws Exception {
                 Object value=dataContentMap.get(fieldGroup.getName());
                 if(fieldGroup.getFormater()!=null && value instanceof String){
@@ -118,7 +118,7 @@ public class DataWrapper extends Wrapper implements Constants{
              * @param protocalTemplate
              * @throws Exception
              */
-            @Override
+//            @Override
             public void execute(FieldGroup fieldGroup, Map<String, Object> dataContentMap, List<byte[]> buffer, ProtocalTemplate protocalTemplate) throws Exception {
                 String refType = fieldGroup.getRefType();
                 FieldGroup refGroup = protocalTemplate.getFieldGroupMap().get(refType);

@@ -77,7 +77,7 @@ public class LoadHelper implements Constants{
                 if(field.getValidators()==null){
                     field.setValidators(new ArrayList<Validator>());
                 }
-                List<Double> target=new ArrayList<>();
+                List<Double> target=new ArrayList<Double>();
                 for(String s:el1.getText().trim().split(",")){
                     target.add(Double.parseDouble(s));
                 }
@@ -86,7 +86,7 @@ public class LoadHelper implements Constants{
 
             //设置字段值的描述
             if(DESCRIPTION.equals(el1.getName())){
-                Map<Integer,String> description=new LinkedHashMap<>();
+                Map<Integer,String> description=new LinkedHashMap<Integer,String>();
                 for(Element el2:el1.getChildren()){
                     if(ENTRY.equals(el2.getName())){
                         String key=el2.getAttributeValue(KEY);
@@ -113,7 +113,7 @@ public class LoadHelper implements Constants{
      */
     public static FieldGroup loadFieldGroup(String groupType,Element fieldGroupElement){
         FieldGroup fieldGroup=new FieldGroup();
-        Map<String,IFieldNode> childNodes=new LinkedHashMap<>();
+        Map<String,IFieldNode> childNodes=new LinkedHashMap<String,IFieldNode>();
         //如果是事件，添加长度字段
         if(EVENT.equals(groupType)){
             Field field=new Field();
