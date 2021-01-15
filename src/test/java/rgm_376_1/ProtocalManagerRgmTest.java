@@ -79,7 +79,7 @@ public class ProtocalManagerRgmTest {
     @Test
     public void testEncodeBreakerConnect() throws Exception {
         Packet packet =new Packet();
-        Map<String,Object> data=new HashMap<>();
+        Map<String,Object> data=new HashMap<String,Object>();
         data.put("delayTime","20");
         packet.setCommand("control-breakerDisconnect");
         packet.setData(data);
@@ -93,7 +93,7 @@ public class ProtocalManagerRgmTest {
     @Test
     public void testEncodeTryBreakerConnect() throws Exception {
         Packet packet =new Packet();
-        Map<String,Object> data=new HashMap<>();
+        Map<String,Object> data=new HashMap<String,Object>();
         data.put("delayTime1","30");
         data.put("delayTime2","30");
         data.put("delayTime3","30");

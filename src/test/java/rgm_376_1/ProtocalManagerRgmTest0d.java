@@ -25,8 +25,8 @@ public class ProtocalManagerRgmTest0d {
     @Test
     public void test0df81() throws Exception {
         Packet packet =new Packet();
-        Map<String,Object> data=new HashMap<>();
-        Map<String,Object> time=new HashMap<>();
+        Map<String,Object> data=new HashMap<String,Object>();
+        Map<String,Object> time=new HashMap<String,Object>();
         time.put("minute",15);
         time.put("minute",15);
         data.put("delayTime1","30");
@@ -67,8 +67,8 @@ public class ProtocalManagerRgmTest0d {
     @Test
     public void testM() throws Exception {
         Packet packet =new Packet();
-        Map<String,Object> commands=new HashMap<>();
-        Map<String,Object> data=new HashMap<>();
+        Map<String,Object> commands=new HashMap<String,Object>();
+        Map<String,Object> data=new HashMap<String,Object>();
         data.put("ts","15/4/16 12:45");
         data.put("frozenDensity","1");
         data.put("pointNumber","1");
